@@ -1,21 +1,73 @@
 body{
+    min-height: 50vw;
     padding: 30px;
+    font-family: sans-serif;
+    background-image: linear-gradient(to bottom, rgba(96, 230, 235, 0.726), rgb(247, 244, 120));
+}
+
+input{
+    width: 50px;
+    border: none;
+    font-size: 20px;
 }
 
 table {
-    border-collapse: collapse;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+
+    font-weight: 600;
   }
 
   table th,
   table td {
-    padding: 10px;
-    border: 1px solid #2a2a2a;
+    padding: 5px;
+    border-bottom: 1px solid #2a2a2a;
+    min-width: 50px;
+  }
+
+  .result-table{
+    font-size: 20px;
+    background-color: antiquewhite;
+
   }
 
 .buttons{
-    margin-right: auto;
-    margin-left: auto;
+    display: inline-block;
+    margin-left: 39vw;
+}
+
+.buttons>button{
+    padding: 5px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+.add-button{
+    background-color: #00fa0caf;
+}
+
+.out-button{
+    background-color: #00ccffa6;
+}
+
+.clear-button{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+
+    padding: 10px;
+
+    border-radius: 4px;
+    background-color: rgba(255, 38, 0, 0.945);
+    color: #fff;
+    font-size: 20px;
+}
+
+.clear-button:active{
+    background-color: rgba(255, 153, 0, 0.945);
 }
 
