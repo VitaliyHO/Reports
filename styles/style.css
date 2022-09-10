@@ -50,8 +50,17 @@ table {
     background-color: #00fa0caf;
 }
 
+.add-button:active{
+    background-color: #5ece63af;
+
+}
+
 .out-button{
     background-color: #00ccffa6;
+}
+
+.out-button:active{
+    background-color: #69cde6a6;
 }
 
 .clear-button{

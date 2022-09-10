@@ -1,6 +1,7 @@
 'use strict'
 
 const refs = {
+    body: document.querySelector('body'),
     input: document.querySelectorAll('input'),
     publ: document.querySelector('#input-publ'),
     video: document.querySelector('#input-video'),
@@ -46,17 +47,17 @@ function onAddBtnClick() {
     report.studies += Number(refs.studies.value);
     report. pubNumbers += 1;
 
-console.log(refs.publ.value.length);
-
     localStorage.setItem(REPORT_KEY, JSON.stringify(report));
 
     arrOfInput.forEach(elem => elem.value = '');
 };
 
+document.addEventListener('keydown', event => {if(event.keyCode === 13){onAddBtnClick()}});
 
-refs.outputBtn.addEventListener('click', fillsResultsTable);
 
-function fillsResultsTable() {
+refs.outputBtn.addEventListener('click', onOutputBtnClick);
+
+function onOutputBtnClick() {
     const storageReport = JSON.parse(localStorage.getItem(REPORT_KEY));
 
     if(!storageReport){
@@ -77,5 +78,15 @@ function fillsResultsTable() {
     refs.publishers.textContent = storageReport.pubNumbers;
 };
 
-refs.clearBtn.addEventListener('click', () => localStorage.removeItem(REPORT_KEY));
+refs.clearBtn.addEventListener('click', onClearBtnClick);
 
+function onClearBtnClick () {
+    localStorage.removeItem(REPORT_KEY);
+
+    refs.resultPubl.textContent = '';
+    refs.resultVideo.textContent = '';
+    refs.resultHours.textContent = '';
+    refs.resultVisits.textContent = '';
+    refs.resultStudies.textContent = '';
+    refs.publishers.textContent = '';
+}
