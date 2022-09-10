@@ -1,0 +1,21 @@
+body{
+    padding: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  table th,
+  table td {
+    padding: 10px;
+    border: 1px solid #2a2a2a;
+  }
+
+.buttons{
+    margin-right: auto;
+    margin-left: auto;
+}
+
