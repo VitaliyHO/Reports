@@ -36,8 +36,8 @@ const report = JSON.parse(localStorage.getItem(REPORT_KEY)) ?? {
 refs.addBtn.addEventListener('click', onAddBtnClick);
 
 function onAddBtnClick() {
-    if(refs.publ.value.length === 0 || refs.video.value.length === 0 || refs.hours.value.length === 0 || refs.visits.value.length === 0 || refs.studies.value.length === 0){
-        return alert('Всі поля повинні бути заповнені');
+    if(refs.hours.value.length === 0){
+        return alert('Поле "Години" повинне бути заповнене');
     };
     
     report.publ += Number(refs.publ.value);
@@ -89,4 +89,6 @@ function onClearBtnClick () {
     refs.resultVisits.textContent = '';
     refs.resultStudies.textContent = '';
     refs.publishers.textContent = '';
+
+    document.location.reload();
 }

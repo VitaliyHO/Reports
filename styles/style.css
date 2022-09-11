@@ -2,7 +2,7 @@ body{
     min-height: 50vw;
     padding: 30px;
     font-family: sans-serif;
-    background-image: linear-gradient(to bottom, rgba(96, 230, 235, 0.726), rgb(247, 244, 120));
+    background-image: linear-gradient(to bottom, rgba(0, 238, 255, 0.562), rgb(247, 177, 120));
 }
 
 input{
