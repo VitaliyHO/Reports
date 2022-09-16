@@ -1,82 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>Підсумок звітів</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Підсумок звітів</title>
 </head>
+
 <body>
-    <table>
-        <tr>
-          <td>Публікації</td>
-          <td>
-            <input type="number" id="input-publ" value="" tabindex="1">
-          </td>
-        </tr>
-        <tr>
-            <td>Відео</td>
-            <td>
-                <input type="number" id="input-video" value="" tabindex="2">
-            </td>
-          </tr>
-          <tr>
-            <td>Години</td>
-            <td>
-                <input type="number" id="input-hours" value="" tabindex="3">
-            </td>
-          </tr>
-          <tr>
-            <td>Повторні відвідини</td>
-            <td>
-                <input type="number" id="input-visits" value="" tabindex="4">
-            </td>
-          </tr>
-          <tr>
-            <td>Біблійні вивчення</td>
-            <td>
-                <input type="number" id="input-studies" value="" tabindex="5">
-            </td>
-          </tr>
-      </table>
-      <div class="buttons">
-        <button class="add-button js-add-btn">Додати звіт</button>
-        <button class="out-button js-output-btn">Вивести результат</button>
-        <button class="clear-button js-clear-btn">Очистити результат</button>
-      </div>
-      <table class="result-table">
-        <tr>
-          <td>Публікації</td>
-          <td id="output-publ">
-          </td>
-        </tr>
-        <tr>
-            <td>Відео</td>
-            <td id="output-video">
-            </td>
-          </tr>
-          <tr>
-            <td>Години</td>
-            <td id="output-hours">
-            </td>
-          </tr>
-          <tr>
-            <td>Повторні відвідини</td>
-            <td id="output-visits">
-            </td>
-          </tr>
-          <tr>
-            <td>Біблійні вивчення</td>
-            <td id="output-studies">
-            </td>
-          </tr>
-          <tr>
-            <td>Кількість вісників</td>
-            <td id="publishers">
-            </td>
-          </tr>
-      </table>
-      <script src="./JS/script.js"></script>
+  <button class="info-btn js-info-modal-open" type="button">i</button>
+  <table class="input-table">
+    <tr>
+      <td>Публікації</td>
+      <td>
+        <input type="number" id="input-publ" value="" tabindex="1">
+      </td>
+    </tr>
+    <tr>
+      <td>Відео</td>
+      <td>
+        <input type="number" id="input-video" value="" tabindex="2">
+      </td>
+    </tr>
+    <tr>
+      <td>Години</td>
+      <td>
+        <input type="number" id="input-hours" value="" tabindex="3">
+      </td>
+    </tr>
+    <tr>
+      <td>Повторні відвідини</td>
+      <td>
+        <input type="number" id="input-visits" value="" tabindex="4">
+      </td>
+    </tr>
+    <tr>
+      <td>Біблійні вивчення</td>
+      <td>
+        <input type="number" id="input-studies" value="" tabindex="5">
+      </td>
+    </tr>
+  </table>
+  <div class="buttons">
+    <button class="add-button js-add-btn">Додати звіт</button>
+    <button class="out-button js-output-btn">Вивести результат</button>
+    <button class="clear-button js-clear-btn">Очистити результат</button>
+  </div>
+  <table class="result-table">
+    <tr>
+      <td>Публікації</td>
+      <td id="output-publ">
+      </td>
+    </tr>
+    <tr>
+      <td>Відео</td>
+      <td id="output-video">
+      </td>
+    </tr>
+    <tr>
+      <td>Години</td>
+      <td id="output-hours">
+      </td>
+    </tr>
+    <tr>
+      <td>Повторні відвідини</td>
+      <td id="output-visits">
+      </td>
+    </tr>
+    <tr>
+      <td>Біблійні вивчення</td>
+      <td id="output-studies">
+      </td>
+    </tr>
+    <tr>
+      <td>Кількість вісників</td>
+      <td id="publishers">
+      </td>
+    </tr>
+  </table>
+  <div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+  <button class="close-info-btn js-info-modal-close">X</button>
+      <h3>ЯК КОРИСТУВАТИСЬ КАЛЬКУЛЯТОРОМ</h3>
+      <p class="info">
+        Перед початком роботи натисни кнопку "Вивести результат"
+      </p>
+      <img src="./images/result_button.jpg" alt="btn">
+      <p class="info">
+        Якщо у таблиці результатів у всіх полях з'явилися нулі, це означає, 
+        що пам'ять пуста і можна починати додавати звіти. 
+        Якщо у деяких або у всіх полях з'явились не нулі, то потрібно натиснути 
+        кнопку "Очистити результат" 
+      <img src="./images/clear_btn.jpg" alt="clear btn" width="150px">
+        і ще раз на кнопку "Вивести результат".
+      </p>
+      <p class="info"></p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.5/dist/notiflix-aio-3.2.5.min.js"></script>
+  <script src="./JS/script.js"></script>
 </body>
+
 </html>

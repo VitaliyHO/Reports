@@ -1,9 +1,39 @@
 body{
-    min-height: 50vw;
+    /* min-height: 50vw; */
+    height: 100vh;
     padding: 30px;
     font-family: sans-serif;
+    text-align: center;
     background-image: linear-gradient(to bottom, rgba(0, 238, 255, 0.562), rgb(247, 177, 120));
 }
+
+.info-btn{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 70px;
+    border-radius: 50%;
+    border: 4px solid rgb(64, 147, 158);
+    padding: 10px;
+    font-size: 40px;
+    background-color: rgba(250, 217, 175, 0.432);
+    color: #ff00dd;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        padding-top: 50px;
+    }
+    .input-table {
+      /* margin-top: 500px; */
+    }
+    .info-btn{
+        width: 45px;
+        font-size: 18px;
+        border: 2px solid rgb(64, 147, 158);
+        
+    }
+  }
 
 input{
     width: 50px;
@@ -33,11 +63,6 @@ table {
     background-color: antiquewhite;
 
   }
-
-.buttons{
-    display: inline-block;
-    margin-left: 39vw;
-}
 
 .buttons>button{
     padding: 5px;
@@ -76,7 +101,59 @@ table {
     font-size: 20px;
 }
 
+@media screen and (max-width: 500px) {
+    .clear-button{
+        top: 670px;
+        right: 95px;
+        left: 95px;
+    }
+  }
+
 .clear-button:active{
     background-color: rgba(255, 153, 0, 0.945);
 }
 
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0.4;
+}
+
+.modal{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+    border: 2px solid grey;
+    border-radius: 8px;
+    text-align: center;
+    background-color: rgb(224, 210, 188);
+}
+
+.close-info-btn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px 2px 5px;
+    border-radius: 50%;
+}

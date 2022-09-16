@@ -18,6 +18,9 @@ const refs = {
     addBtn: document.querySelector('.js-add-btn'),
     outputBtn: document.querySelector('.js-output-btn'),
     clearBtn: document.querySelector('.js-clear-btn'),
+    modalOpenBtn: document.querySelector('.js-info-modal-open'),
+    modalCloseBtn: document.querySelector('.js-info-modal-close'),
+    modal: document.querySelector("[data-modal]"),
 }
 
 const REPORT_KEY = "report";
@@ -33,11 +36,13 @@ const report = JSON.parse(localStorage.getItem(REPORT_KEY)) ?? {
     pubNumbers: 0,
 };
 
+Notiflix.Notify.init({position: 'center-top', fontSize: '18px', timeout: 3000,});
+
 refs.addBtn.addEventListener('click', onAddBtnClick);
 
 function onAddBtnClick() {
     if(refs.hours.value.length === 0){
-        return alert('Поле "Години" повинне бути заповнене');
+        return Notiflix.Notify.failure('Поле "Години" повинне бути заповнене');
     };
     
     report.publ += Number(refs.publ.value);
@@ -91,4 +96,18 @@ function onClearBtnClick () {
     refs.publishers.textContent = '';
 
     document.location.reload();
+};
+
+refs.modalOpenBtn.addEventListener('click', onModalOpenBtnClick);
+refs.modalCloseBtn.addEventListener('click', onModalCloseBtnClick);
+
+
+function onModalOpenBtnClick() {
+    console.log(1);
+    refs.modal.classList.toggle("is-hidden");
+}
+
+function onModalCloseBtnClick() {
+    refs.modal.classList.toggle("is-hidden");
+
 }
